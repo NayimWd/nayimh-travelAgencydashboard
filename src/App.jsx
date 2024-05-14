@@ -1,19 +1,16 @@
-import Layout from "./assets/Page/Layout";
-import { SidebarProvider } from "./assets/context/SidebarToggleContext";
+import Layout from "./Page/Layout";
+import { SidebarProvider } from "./context/SidebarToggleContext";
 import Header from "./layout/Header";
-
-
 
 function App() {
 	return (
 		<SidebarProvider>
-		<div className="min-h-screen flex flex-col">
-			{/* header */}
-			<Header />
-			{/* header */}
-			<Layout/>
-
-		</div>
+			<div className="min-h-screen flex flex-col w-full  overflow-x-hidden">
+				{/* header */}
+				<Header />
+				{/* header */}
+				<Layout />
+			</div>
 		</SidebarProvider>
 	);
 }

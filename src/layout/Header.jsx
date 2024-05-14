@@ -5,35 +5,34 @@ import Logo from "../assets/Logo";
 import Button from "../component/reusableComopnent/Button";
 import SearchBar from "./layoutComponent/SearchBar";
 import { CiSearch } from "react-icons/ci";
-import {  useState } from "react";
+import { useState } from "react";
 
-import { useSidebarContext } from "../assets/context/useSidebar";
-
+import { useSidebarContext } from "../context/useSidebar";
 
 const Header = () => {
 	const [showFullSearch, setFullSearch] = useState(false);
 
-	
-	const {toggleSidebar} = useSidebarContext();
-
-	
+	const { toggleSidebar } = useSidebarContext();
 
 	return (
-		<div className="flex gap-10 h-14 xsm:h-14 sm:h-26 sm:gap-12 md:gap-14 lg:gap-16 justify-between items-center p-2 mb-6 mx-4 sticky top-0">
+		<div className="sticky top-0 z-50 bg-white shadow flex justify-between items-center p-4 md:p-6 md:gap-10">
 			{/* icon and logo */}
 			<div
 				className={`${
 					showFullSearch ? "hidden md:flex" : "flex"
-				} gap-4 items-center flex-shrink-0`}
+				} gap-2 sm:gap-4 items-center flex-shrink-0`}
 			>
-				<button className="bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full" onClick={toggleSidebar}>
-					<IoMdMenu  className="w-6 h-6 cursor-pointer" />
+				<button
+					className="bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full"
+					onClick={toggleSidebar}
+				>
+					<IoMdMenu className="w-6 h-6 cursor-pointer text-deep_blue" />
 				</button>
 				<Link to="/">
 					<Logo />
 				</Link>
 			</div>
-			
+
 			{/* search bar */}
 			<div className="flex-grow">
 				<SearchBar
@@ -51,13 +50,10 @@ const Header = () => {
 					onClick={() => setFullSearch(true)}
 					className="block md:hidden bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full"
 				>
-					<CiSearch className="w-6 h-6" />
+					<CiSearch className="w-6 h-6 text-deep_blue" />
 				</button>
 				<Button type="rounded">
-					<IoMdNotificationsOutline className="w-6 h-6" />
-				</Button>
-				<Button type="rounded">
-					<CgProfile className="w-6 h-6" />
+					<CgProfile className="w-6 h-6 text-deep_blue" />
 				</Button>
 			</div>
 		</div>

@@ -4,20 +4,21 @@ const Button = ({ type, children, style }) => {
 	if (type === "rounded") {
 		return (content = (
 			<button
-				className={`flex justify-center items-center bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full ${style}`}
+				className={`flex justify-center items-center bg-slate-50 hover:bg-soft_neutrals  p-1 sm:p-3 rounded-full ${style}`}
 			>
 				{children}
 			</button>
 		));
 	}
-  
 
 	if (type === "rounded-dark") {
-		return content = <button className={`bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full ${style}`}
-        >
-        {children}
-        </button>
-		
+		return (content = (
+			<button
+				className={`bg-slate-50 hover:bg-soft_neutrals  p-1 sm:p-3 rounded-full ${style}`}
+			>
+				{children}
+			</button>
+		));
 	}
 
 	return content;

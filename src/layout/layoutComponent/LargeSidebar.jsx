@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const LargeSidebar = ({children}) => {
-  return (
-    <div >
-    {children}
-    </div>
-  )
-}
+const LargeSidebar = ({ children }) => {
+	return <div className="">{children}</div>;
+};
 
-export default LargeSidebar
+export default LargeSidebar;

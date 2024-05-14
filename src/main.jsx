@@ -10,6 +10,7 @@ import {
 	createBrowserRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
+import Dashboard from './Page/Dashboard.jsx';
 
 {
   /* ---- OnBlur Title set ---- */
@@ -27,7 +28,7 @@ window.addEventListener("focus", () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
-
+    <Route index element={<Dashboard/>}/>
     </Route>
   )
 )

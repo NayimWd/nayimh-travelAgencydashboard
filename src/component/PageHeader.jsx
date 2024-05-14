@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useSidebarContext } from "../assets/context/useSidebar";
+import { useSidebarContext } from "../context/useSidebar";
 import { IoMdMenu } from "react-icons/io";
 import Logo from "../assets/Logo";
 
-const PageHeader = ({hidden = false}) => {
-    const {toggleSidebar} = useSidebarContext();
+const PageHeader = ({ hidden = false }) => {
+	const { toggleSidebar } = useSidebarContext();
 	return (
 		<div
 			className={`${
@@ -13,7 +13,7 @@ const PageHeader = ({hidden = false}) => {
 		>
 			<button
 				className="bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full"
-				onClick={toggleSidebar}	
+				onClick={toggleSidebar}
 			>
 				<IoMdMenu className="w-6 h-6 cursor-pointer" />
 			</button>
