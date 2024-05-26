@@ -3,7 +3,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { BiLeftArrow } from "react-icons/bi";
 import Button from "../../component/reusableComopnent/Button";
 
-const SearchBar = ({showFullSearch, setFullSearch}) => {
+const SearchBar = ({showFullSearch, setFullSearch, setSearch}) => {
   return (
     <div className='flex flex-grow justify-center items-center'>
         <button onClick={()=> setFullSearch(!showFullSearch)} className={` mr-1  bg-slate-50 hover:bg-soft_neutrals  p-3 rounded-full ${showFullSearch ? "flex md:hidden" : "hidden"}`}>
@@ -12,6 +12,7 @@ const SearchBar = ({showFullSearch, setFullSearch}) => {
         </button>
         <div className={`items-center flex-grow max-w-[620px] ${showFullSearch ? "flex " : " hidden md:flex "} `}>
             <input
+            onChange={(e)=> setSearch(e.target.value)}
             type='text'
             placeholder='search'
             className=' rounded-l-full border-2 border-neutral-200 shadow-inner shadow-neutral-200 py-1 px-4 text-lg w-full  outline-none flex-grow max-w-[600px]'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
@@ -10,7 +10,12 @@ import {
 	createBrowserRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
-import Dashboard from './Page/Dashboard.jsx';
+import NotFound from './Page/NotFound.jsx';
+import Layout from './Page/Layout.jsx';
+import DashboardHome from './Page/DashboardHome.jsx';
+const Login = lazy(()=> import("./Page/auth/Login.jsx"))
+const Register = lazy(()=> import("./Page/auth/Register.jsx"))
+const ProfilePage = lazy(()=> import("./Page/ProfilePage.jsx"));
 
 {
   /* ---- OnBlur Title set ---- */
@@ -28,13 +33,23 @@ window.addEventListener("focus", () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
-    <Route index element={<Dashboard/>}/>
+      <Route path='/' element={<Layout/>}>
+        <Route index={true} path='/' element={<DashboardHome/>}/>
+        <Route path='profile' element={<ProfilePage/>}/>
+       
+      </Route>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
+      <Route path="*" element={<NotFound />} />
+    <Route path="*" element={<NotFound />} />
     </Route>
   )
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Suspense fallback="Loading...">
     <RouterProvider router={router}/>
+    </Suspense>
   </React.StrictMode>,
 )

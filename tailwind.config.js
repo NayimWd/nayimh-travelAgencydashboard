@@ -28,8 +28,8 @@ export default {
 		
 				colors: {
 					deep_blue: "#005C97",
-					gold_or_champagne: "#FFD700",
-					emerald_green: "#50C878",
+					gold: "#FFD700",
+					soft_green: "#50C878",
 					soft_neutrals: "#F3F3F3",
 					sunset_orange: "#FFA500",
 					dark_gray: "#333333",

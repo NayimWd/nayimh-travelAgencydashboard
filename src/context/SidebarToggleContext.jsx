@@ -6,6 +6,7 @@ export function SidebarProvider({ children }) {
 	const [isLargeOpen, setIsLeargeOpen] = useState(true);
 	const [isSmallOpen, setIsSmallOpen] = useState(false);
 
+
 	useEffect(() => {
 		const handler = () => {
 			if (!isScreenSmall()) {
@@ -15,7 +16,7 @@ export function SidebarProvider({ children }) {
 		window.addEventListener("resize", handler);
 
 		return () => {
-			window.removeEventListener("reset", handler);
+			window.removeEventListener("resize", handler);
 		};
 	}, []);
 
@@ -39,6 +40,11 @@ export function SidebarProvider({ children }) {
 		}
 	}
 
+	const toggle = () => {
+		setIsOpen(!open)
+	}
+
+
 	return (
 		<sidebarContext.Provider
 			value={{
@@ -46,6 +52,7 @@ export function SidebarProvider({ children }) {
 				isSmallOpen,
 				toggleSidebar,
 				closeSidebar,
+			
 			}}
 		>
 			{children}

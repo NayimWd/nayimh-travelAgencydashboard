@@ -1,16 +1,12 @@
-import Layout from "./Page/Layout";
+import { Outlet } from "react-router-dom";
 import { SidebarProvider } from "./context/SidebarToggleContext";
-import Header from "./layout/Header";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	return (
 		<SidebarProvider>
-			<div className="min-h-screen flex flex-col w-full  overflow-x-hidden">
-				{/* header */}
-				<Header />
-				{/* header */}
-				<Layout />
-			</div>
+			<Toaster/>
+			<Outlet/>
 		</SidebarProvider>
 	);
 }

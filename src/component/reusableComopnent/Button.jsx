@@ -4,7 +4,7 @@ const Button = ({ type, children, style }) => {
 	if (type === "rounded") {
 		return (content = (
 			<button
-				className={`flex justify-center items-center bg-slate-50 hover:bg-soft_neutrals  p-1 sm:p-3 rounded-full ${style}`}
+				className={`flex justify-center items-center bg-slate-50 hover:bg-soft_neutrals flex-shrink-0  p-2 sm:p-3 rounded-full ${style}`}
 			>
 				{children}
 			</button>

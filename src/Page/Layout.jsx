@@ -1,15 +1,19 @@
 import React from "react";
 import Sidebar from "../layout/layoutComponent/Sidebar";
 import Dashboard from "./Dashboard";
+import Header from "../layout/Header";
 
 const Layout = () => {
 	return (
-		<div className="w-full flex">
-			<div className=" overflow-y-auto overflow-x-hidden scrolbar-hidden py-4 flex flex-col ">
-				<Sidebar />
+		<>
+			<Header />
+			<div className="w-full flex">
+				<div className="w-full overflow-y-auto overflow-x-hidden scrolbar-hidden  flex  ">
+					<Sidebar />
+					<Dashboard />
+				</div>
 			</div>
-			<Dashboard />
-		</div>
+		</>
 	);
 };
 
